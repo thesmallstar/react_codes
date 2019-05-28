@@ -1,0 +1,23 @@
+{
+  "name": "react_codes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesmallstar/react_codes.git"
+  },
+  "author": "Manthan Surkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thesmallstar/react_codes/issues"
+  },
+  "homepage": "https://github.com/thesmallstar/react_codes#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

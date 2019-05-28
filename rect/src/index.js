@@ -47,18 +47,5 @@ ReactDOM.render(<MyApp />, document.getElementById("root"));
 
 /* functional componant pratice */
 
-function AboutMe() {
-  return (
-    <div>
-      <h1>MAnthan Surkar</h1>
-      <p> me Blabbring about myself</p>
-      <ol>
-        <li>Mumbai</li>
-        <li>Pune</li>
-        <li>Goa</li>
-      </ol>
-    </div>
-  );
-}
-
+import AboutMe from "./AboutMe";
 ReactDOM.render(<AboutMe />, document.getElementById("root"));

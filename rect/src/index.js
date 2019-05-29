@@ -47,5 +47,8 @@ ReactDOM.render(<MyApp />, document.getElementById("root"));
 
 /* functional componant pratice */
 
-import AboutMe from "./AboutMe";
+import AboutMe from "./components/AboutMe";
 ReactDOM.render(<AboutMe />, document.getElementById("root"));
+
+
+

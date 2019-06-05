@@ -1,14 +1,15 @@
 import React from "react";
 
 function Joke(props) {
-  if (props.jokes.q.trim() !== "") {
+  console.log(props);
+  if (props.q.trim() !== "") {
     return (
       <h3>
-        {props.jokes.q} - {props.jokes.p}
+        {props.q} - {props.p}
       </h3>
     );
   } else {
-    return <h3>{props.jokes.p}</h3>;
+    return <h3>{props.p}</h3>;
   }
 }
 

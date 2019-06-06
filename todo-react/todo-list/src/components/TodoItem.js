@@ -1,12 +1,16 @@
 import React from "react";
+import Checkbox from "@material-ui/core/Checkbox";
+
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 function TodoItem() {
   return (
-    <div>
-      <input type="checkbox" name="do" value="Bike" className="" />
-      &nbsp;
-      <span>Do this</span>
-    </div>
+    <FormControlLabel
+      value="end"
+      control={<Checkbox color="primary" />}
+      label="End"
+      labelPlacement="start"
+    />
   );
 }
 

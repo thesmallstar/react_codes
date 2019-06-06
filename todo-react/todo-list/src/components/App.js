@@ -1,17 +1,32 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import Menu from "./navbar";
+import Container from "@material-ui/core/Container";
+import FormControl from "@material-ui/core/FormControl";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import indigo from "@material-ui/core/colors/indigo";
+
+const themes = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#1e88e5"
+    },
+    secondary: indigo
+  }
+});
 
 function App() {
   return (
-    <div className="container">
-      <h1>Todo List</h1>
+    <MuiThemeProvider theme={themes}>
       <div>
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        <Menu />
+        <Container>
+          <FormControl component="fieldset">
+            <TodoItem />
+          </FormControl>
+        </Container>
       </div>
-    </div>
+    </MuiThemeProvider>
   );
 }
 

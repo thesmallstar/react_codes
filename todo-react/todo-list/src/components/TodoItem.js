@@ -3,13 +3,15 @@ import Checkbox from "@material-ui/core/Checkbox";
 
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-function TodoItem() {
+function TodoItem(props) {
+  console.log(props.t);
   return (
     <FormControlLabel
       value="end"
       control={<Checkbox color="primary" />}
-      label="End"
+      label={props.t}
       labelPlacement="start"
+      checked={props.s}
     />
   );
 }

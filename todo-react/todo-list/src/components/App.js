@@ -55,11 +55,22 @@ class App extends React.Component {
   }
 
   handleChange(id) {
-    this.setState(function(prevstate) {
-      console.log(prevstate);
+    // this.setState(function(prevstate) {
+    //   console.log(prevstate);
 
-      prevstate.todo[id - 1].complete = ~prevstate.todo[id - 1].complete;
-      return prevstate;
+    //   prevstate.todo[id - 1].complete = ~prevstate.todo[id - 1].complete;
+    //   return prevstate;
+    // });
+
+    this.setState(function(prevstate) {
+      const updatedtodo = prevstate.todo.map(todo => {
+        if (todo.id === id) {
+          todo.complete = !todo.complete;
+        }
+        return todo;
+      });
+
+      return updatedtodo;
     });
     console.log(id);
   }

@@ -43,20 +43,49 @@ const themes = createMuiTheme({
   }
 });
 
-function App() {
-  const todo = data.map(todo => (
-    <TodoItem t={todo.description} s={todo.complete} />
-  ));
-  return (
-    <MuiThemeProvider theme={themes}>
-      <div>
-        <Menu />
-        <Container>
-          <FormControl component="fieldset">{todo}</FormControl>
-        </Container>
-      </div>
-    </MuiThemeProvider>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      todo: data
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(id) {
+    this.setState(function(prevstate) {
+      console.log(prevstate);
+
+      prevstate.todo[id - 1].complete = ~prevstate.todo[id - 1].complete;
+      return prevstate;
+    });
+    console.log(id);
+  }
+
+  render() {
+    const todos = this.state.todo.map(todom => (
+      <TodoItem
+        change={this.handleChange}
+        key={todom.id}
+        id={todom.id}
+        t={todom.description}
+        s={todom.complete}
+      />
+    ));
+
+    return (
+      <MuiThemeProvider theme={themes}>
+        <div>
+          <Menu />
+          <Container>
+            <FormControl component="fieldset">{todos}</FormControl>
+          </Container>
+        </div>
+      </MuiThemeProvider>
+    );
+  }
 }
 
 export default App;

@@ -14,6 +14,7 @@ class TodoItem extends React.Component {
     return (
       <FormControlLabel
         value="end"
+        className={this.props.s ? "newclass" : null}
         control={<Checkbox color="primary" />}
         label={this.props.t}
         labelPlacement="start"

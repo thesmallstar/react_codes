@@ -5,18 +5,27 @@ class App extends React.Component {
     super();
 
     this.state = {
-      user: "Manthan",
-      log: true
+      charector: {},
+      loading: false
     };
   }
+  componentDidMount() {
+    this.setState(Prev => {
+      let newstate = Prev;
+      newstate.loading = true;
+      return newstate;
+    });
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = "https://swapi.co/api/people/1"; // site that doesn’t send Access-Control-*
+    fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+      .then(response => response.json())
+      .then(contents => this.setState({ charector: contents, loading: false }));
+  }
+
   render() {
+    console.log(this.state.loading);
     return (
-      <div>
-        <h1>
-          Hello you are currently logged <p hidden={this.state.log}>out</p>{" "}
-          <p hidden={!this.state.log}>in</p>
-        </h1>
-      </div>
+      <div>{this.state.loading ? "loading" : this.state.charector.name}</div>
     );
   }
 }
